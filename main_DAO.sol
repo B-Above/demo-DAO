@@ -18,7 +18,7 @@ contract DAO {
         //ProposalVote pv;
     }
 
-
+    string public name;
     mapping(address => Member) public members;
     mapping(uint256 => ProposalVote) private pros;
     MyToken private MYTN;  // 创建MYTN的实例
@@ -30,10 +30,12 @@ contract DAO {
         _;
     }
 
-    constructor(uint256 initialSupply){
+    constructor(uint256 initialSupply,string memory _name){
         createToken(initialSupply);
         supplynumber = initialSupply;
+        name = _name;
     }
+
 
     function createToken(uint256 _number) private {
         MYTN = new MyToken(_number);  // 创建DAO token的实例并保存在MYTN中
@@ -120,10 +122,27 @@ contract DAO {
         weight = pros[proposal.index].RestVoteWeight(msg.sender);
     }
 
+    function transferTo (address to, uint number) public
+    {
+        payable(to).transfer(number);
+    }
+
     receive() external payable{
         // 获取接收到的以太币数量
         uint256 receivedEther = msg.value;
         payable(msg.sender).transfer(receivedEther);
+    }
+
+    function callJoinFunction(uint256 param,address to) external {
+        // 向在to地址的智能合约发送交易来调用 join 函数
+        (bool success, ) = to.call{value: param}(abi.encodeWithSignature("joinDAO()"));
+        require(success, "Join function call failed");
+    }
+
+    function callVoteFunction(uint256 proposalIndex, bool support, uint256 vote_num,address to) external {
+        // 向在to地址的智能合约发送交易来调用 vote 函数
+        (bool success, ) = to.call(abi.encodeWithSignature("vote(uint256,bool,uint256)", proposalIndex,support,vote_num));
+        require(success, "Vote function call failed");
     }
 
    
