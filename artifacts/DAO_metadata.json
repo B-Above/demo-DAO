@@ -315,7 +315,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"main_DAO.sol": "DAO"
+			"DAO_with_response.sol": "DAO"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -361,7 +361,7 @@
 				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
 			]
 		},
-		"main_DAO.sol": {
+		"DAO_with_response.sol": {
 			"keccak256": "0x6c5a09d096f88d6df7bb7e276b665bdc58dd8f1b28d65dff674ebea3bb71cc9a",
 			"license": "GPL-3.0",
 			"urls": [
