@@ -41,31 +41,31 @@ contract DAO {
         members[msg.sender] = Member(true, false);
     }
 
-    function createProposal(string memory description) external onlyMember {
-        proposals.push(Proposal({
-            creator: msg.sender,
-            description: description,
-            yesVotes: 0,
-            noVotes: 0
-        }));
-    }
+    // function createProposal(string memory description) external onlyMember {
+    //     proposals.push(Proposal({
+    //         creator: msg.sender,
+    //         description: description,
+    //         yesVotes: 0,
+    //         noVotes: 0
+    //     }));
+    // }
     
-    function vote(uint256 proposalIndex, bool support) external onlyMember {
-        require(proposalIndex < proposals.length, "Invalid proposal index");
-        //require(!members[msg.sender].hasVoted, "You have already voted for this proposal");
+    // function vote(uint256 proposalIndex, bool support) external onlyMember {
+    //     require(proposalIndex < proposals.length, "Invalid proposal index");
+    //     //require(!members[msg.sender].hasVoted, "You have already voted for this proposal");
         
-        Proposal storage proposal = proposals[proposalIndex];
-        require(!proposal.voters[members[msg.sender]].exists,"You have already voted for this proposal");
-        //require(proposal.creator != msg.sender, "The proposal creator cannot vote");
+    //     Proposal storage proposal = proposals[proposalIndex];
+    //     require(!proposal.voters[members[msg.sender]].exists,"You have already voted for this proposal");
+    //     //require(proposal.creator != msg.sender, "The proposal creator cannot vote");
 
-        if (support) {
-            proposal.yesVotes++;
-        } else {
-            proposal.noVotes++;
-        }
-        proposal.voters.push(members[msg.sender]);
-        //members[msg.sender].hasVoted = true;
-    }
+    //     if (support) {
+    //         proposal.yesVotes++;
+    //     } else {
+    //         proposal.noVotes++;
+    //     }
+    //     proposal.voters.push(members[msg.sender]);
+    //     //members[msg.sender].hasVoted = true;
+    // }
 
     function Proposalresult(uint proID) public view
             returns (uint support, uint againest, bool pass)
@@ -83,10 +83,8 @@ contract DAO {
         uint256 receivedEther = msg.value;
 
         // 计算应发送的代币数量
-        uint256 tokenAmount = receivedEther / 0.1;
 
         // 向发送方发送代币
-        _mint(msg.sender, tokenAmount);
     }
 
    
