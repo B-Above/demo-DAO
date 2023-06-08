@@ -2,7 +2,7 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
-contract ProposalVote{
+contract proposalVote{
     struct Voteprocess{
         bool finish;
         uint256 yesVotes;
@@ -21,27 +21,27 @@ contract ProposalVote{
         pro = Voteprocess(false,0,0);
     }
 
-    function vote(uint256 vote_number, bool support, uint256 total_token, address sender) public{
+    function vote(uint256 voteNumber, bool support, uint256 totalToken, address sender) public{
         if (!voters[sender].exists){
-            voters[sender] = Voter(true, total_token);
+            voters[sender] = Voter(true, totalToken);
         } 
-        require(vote_number <= voters[sender].voteweight, "Your token is not enough");
+        require(voteNumber <= voters[sender].voteweight, "Your token is not enough");
         //Proposal storage proposal = proposals[proposalIndex];
         //require(!proposal.voters[members[msg.sender]].exists,"You have already voted for this proposal");
         //require(proposal.creator != msg.sender, "The proposal creator cannot vote");
 
         if (support) {
-            pro.yesVotes += vote_number;
-            voters[sender].voteweight -= vote_number;
+            pro.yesVotes += voteNumber;
+            voters[sender].voteweight -= voteNumber;
         } else {
-            pro.noVotes += vote_number;
-            voters[sender].voteweight -= vote_number;
+            pro.noVotes += voteNumber;
+            voters[sender].voteweight -= voteNumber;
         }
         //proposal.voters.push(members[msg.sender]);
         //members[msg.sender].hasVoted = true;
     }
 
-    function Proposalresult() public view
+    function proposalResult() public view
             returns (uint support, uint againest, bool pass)
     {
         support = pro.yesVotes;
@@ -52,7 +52,7 @@ contract ProposalVote{
         }
     }
 
-    function RestVoteWeight(address sender) public view
+    function restVoteWeight(address sender) public view
             returns (uint weight)
     {
         weight = voters[sender].voteweight;

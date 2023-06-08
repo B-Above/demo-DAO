@@ -11,19 +11,161 @@
 						"internalType": "uint256",
 						"name": "initialSupply",
 						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
 					}
 				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
 			{
+				"inputs": [],
+				"name": "buyToken",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "param",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "callJoinFunction",
+				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "fallback"
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "support",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "voteNum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "callVoteFunction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "checkTokenOfDAO",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "checkTokenOfMe",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "checkTokens",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "checkWeight",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "weight",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "duration",
+						"type": "uint256"
+					}
+				],
+				"name": "createProposal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			},
 			{
 				"inputs": [],
 				"name": "joinDAO",
-				"outputs": [],
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
 				"stateMutability": "payable",
 				"type": "function"
 			},
@@ -43,9 +185,22 @@
 						"type": "bool"
 					},
 					{
-						"internalType": "bool",
-						"name": "hasVoted",
-						"type": "bool"
+						"internalType": "uint256",
+						"name": "tokens",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -102,16 +257,44 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "yesVotes",
+						"name": "index",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "noVotes",
+						"name": "startTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endTime",
 						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "support",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "voteNum",
+						"type": "uint256"
+					}
+				],
+				"name": "vote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -132,7 +315,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"DAO_main.sol": "DAO"
+			"main_DAO.sol": "DAO"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -178,12 +361,20 @@
 				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
 			]
 		},
-		"DAO_main.sol": {
-			"keccak256": "0x9fb7da9bf76ca580aeeb28059d43807cc3a737ab41886c4e5bcf4d924000d54d",
+		"main_DAO.sol": {
+			"keccak256": "0x6c5a09d096f88d6df7bb7e276b665bdc58dd8f1b28d65dff674ebea3bb71cc9a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0875c2a5b02a35aa8f0ce96208df6ab1fd256d99560abc9ce9a1fafbb3453f93",
-				"dweb:/ipfs/QmdH2WRdma7PvQ5pjZybnpDVMXrAfQ5CvpfFvHfw7itE2d"
+				"bzz-raw://3df118b9113db942def25bcf9954f79bd04d3e04494138f8d98277908181ebd0",
+				"dweb:/ipfs/Qmbyt1JGZZdm3HgdGn1M8nNvUggd3K78eVFRdCocWKNqmu"
+			]
+		},
+		"proposal.sol": {
+			"keccak256": "0x71e1fa6102f92bd7998c9da7055234b4178cc0bc6d5c147d7817b7bd7ca34c45",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d1f761ae9dc85d2427792d70a15fa535cc33c3157baab6a17457ae9839fdecc3",
+				"dweb:/ipfs/QmPHoC2h6oQQF3BfKNX8XhSjHsZWkM3uuDKWJJy5AJHrAC"
 			]
 		},
 		"token.sol": {
