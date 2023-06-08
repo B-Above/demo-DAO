@@ -21,35 +21,6 @@
 				"type": "fallback"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "proID",
-						"type": "uint256"
-					}
-				],
-				"name": "Proposalresult",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "support",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "againest",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bool",
-						"name": "pass",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "joinDAO",
 				"outputs": [],
@@ -74,6 +45,35 @@
 					{
 						"internalType": "bool",
 						"name": "hasVoted",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proID",
+						"type": "uint256"
+					}
+				],
+				"name": "proposalResult",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "support",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "againest",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "pass",
 						"type": "bool"
 					}
 				],
@@ -179,11 +179,11 @@
 			]
 		},
 		"DAO_main.sol": {
-			"keccak256": "0x5459c6e56238690ff245292e563e26710471216f1299fdb7d667163697c48160",
+			"keccak256": "0x9fb7da9bf76ca580aeeb28059d43807cc3a737ab41886c4e5bcf4d924000d54d",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://ee174ab893d5a2f5179891c54f5f61cff9a50c5914e713b952b3d6af7c1fd19c",
-				"dweb:/ipfs/QmYdngHYG3ZtJr77ngrA6HBKVeRjrXXHepjTYEDxQgUFdj"
+				"bzz-raw://0875c2a5b02a35aa8f0ce96208df6ab1fd256d99560abc9ce9a1fafbb3453f93",
+				"dweb:/ipfs/QmdH2WRdma7PvQ5pjZybnpDVMXrAfQ5CvpfFvHfw7itE2d"
 			]
 		},
 		"token.sol": {
