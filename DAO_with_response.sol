@@ -171,8 +171,4 @@ function createProposal(string memory description, uint256 duration) external on
         require(success, "Vote function call failed");
     }
 
-
-   
-    // fallback() external { x = 1; }
-    // uint private x;
 }

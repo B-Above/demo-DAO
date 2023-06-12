@@ -29,7 +29,8 @@ struct Proposal {
     Proposal[] public proposals;
     // 供应量
     uint private supplynumber;
-
+    // token price 
+    uint private tokenPrice = 1;
  // 限制只有成员可以调用的修饰符
     modifier onlyMember() {
         require(members[msg.sender].exists, "Only members can call this function");
@@ -170,9 +171,4 @@ function createProposal(string memory description, uint256 duration) external on
         (bool success, ) = to.call(abi.encodeWithSignature("vote(uint256,bool,uint256)", proposalIndex,support,voteNum));
         require(success, "Vote function call failed");
     }
-
-
-   
-    // fallback() external { x = 1; }
-    // uint private x;
 }

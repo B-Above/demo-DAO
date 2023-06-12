@@ -315,7 +315,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"DAO_with_response.sol": "DAO"
+			"main_DAO.sol": "DAO"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -361,12 +361,12 @@
 				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
 			]
 		},
-		"DAO_with_response.sol": {
-			"keccak256": "0x6c5a09d096f88d6df7bb7e276b665bdc58dd8f1b28d65dff674ebea3bb71cc9a",
+		"main_DAO.sol": {
+			"keccak256": "0x10b39b3d2af10cba1e957a102b632cfa7bb70056cacc0f5e2beaa3e228cde190",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://3df118b9113db942def25bcf9954f79bd04d3e04494138f8d98277908181ebd0",
-				"dweb:/ipfs/Qmbyt1JGZZdm3HgdGn1M8nNvUggd3K78eVFRdCocWKNqmu"
+				"bzz-raw://0b073ff64f4caf94bf86905d9b1156a3742e8b2e4132d7a4aaa1a6f3fedeefbd",
+				"dweb:/ipfs/QmdB3Egfryg5SNwPZyhQtQy2LCbQGvMzmNzA3T8QaCgnGi"
 			]
 		},
 		"proposal.sol": {
