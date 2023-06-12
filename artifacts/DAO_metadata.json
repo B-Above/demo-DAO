@@ -16,10 +16,33 @@
 						"internalType": "string",
 						"name": "_name",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_initCTK",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_addCTK",
+						"type": "address"
 					}
 				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "buyCTK",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -278,6 +301,25 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "num",
+						"type": "uint256"
+					}
+				],
+				"name": "sellCTK",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "proposalIndex",
 						"type": "uint256"
 					},
@@ -315,7 +357,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"main_DAO.sol": "DAO"
+			"DAO_without_reponse.sol": "DAO"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -361,12 +403,12 @@
 				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
 			]
 		},
-		"main_DAO.sol": {
-			"keccak256": "0x10b39b3d2af10cba1e957a102b632cfa7bb70056cacc0f5e2beaa3e228cde190",
+		"DAO_without_reponse.sol": {
+			"keccak256": "0xe1b3a10065681ab1aa81c05917619148890c8b32bd80e9534671cd306e6fdcd9",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0b073ff64f4caf94bf86905d9b1156a3742e8b2e4132d7a4aaa1a6f3fedeefbd",
-				"dweb:/ipfs/QmdB3Egfryg5SNwPZyhQtQy2LCbQGvMzmNzA3T8QaCgnGi"
+				"bzz-raw://a36db37723bf9e34ece7a5e0645533f1058d616f995f75c411706075005f5dd7",
+				"dweb:/ipfs/Qmd1WwDydedie4WTQW4kjcbsvH9BabckvyiUNymTTcsiMX"
 			]
 		},
 		"proposal.sol": {

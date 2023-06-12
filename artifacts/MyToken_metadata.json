@@ -349,7 +349,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"token.sol": "MyToken"
+			"CollateralToken.sol": "MyToken"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -395,7 +395,7 @@
 				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
 			]
 		},
-		"token.sol": {
+		"CollateralToken.sol": {
 			"keccak256": "0x3d9ac1420da53653a639e564a155db77b84f843d8f439ec6cee43914facebabc",
 			"license": "GPL-3.0",
 			"urls": [

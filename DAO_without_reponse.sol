@@ -29,6 +29,10 @@ struct Proposal {
     Proposal[] public proposals;
     // 供应量
     uint private supplynumber;
+    // number of CTK
+    uint private ctkNum;
+    // address of CTK
+    address private addCTK;
 
  // 限制只有成员可以调用的修饰符
     modifier onlyMember() {
@@ -38,10 +42,13 @@ struct Proposal {
 
     //初始化合约的初始状态
 
-    constructor(uint256 initialSupply,string memory _name){
+    constructor(uint256 initialSupply,string memory _name, uint256 _initCTK, address _addCTK){
         createToken(initialSupply);
         supplynumber = initialSupply;
         name = _name;
+        initalCTK(_initCTK,_addCTK);
+        ctkNum = 100*_initCTK;
+        addCTK = _addCTK;
     }
 
 // 创建代币实例
@@ -171,6 +178,39 @@ function createProposal(string memory description, uint256 duration) external on
         require(success, "Vote function call failed");
     }
 
+    function initalCTK(uint256 param,address to) private {
+        // 向在to地址的智能合约发送交易来调用 vote 函数
+        (bool success, ) = to.call(abi.encodeWithSignature("buyCTK(uint256)",param));
+        require(success, "Buy CTK failed");
+    }
+
+    // 购买CTK
+    function buyCTK() external payable returns (string memory) {
+        require(members[msg.sender].exists, "You are no a member, please join DAO first");
+        uint256 receivedEther = msg.value;
+        // 计算应发送的代币数量
+        uint256 tokenAmount = 5*receivedEther;
+        if (ctkNum < tokenAmount){
+            // 代币不足，将以太币退回
+            payable(msg.sender).transfer(receivedEther);
+            return "Token not enough, ETH is back.";
+        } else {
+            // 发送CTK给成员
+            (bool success, ) = addCTK.call(abi.encodeWithSignature("transferFrom(address,address,uint256)",address(this),msg.sender,tokenAmount));
+            require(success, "Buy CTK failed");
+            return "Buy token successfully.";
+        }
+    }
+
+    function sellCTK(uint256 num) external returns (string memory) {
+        require(members[msg.sender].exists, "You are no a member, please join DAO first");
+        uint256 sEther = num/5;
+        // 计算应发送的代币数量
+        (bool success, ) = addCTK.call(abi.encodeWithSignature("transferFrom(address,address,uint256)",msg.sender,address(this),num));
+        require(success, "Buy CTK failed");
+        payable(msg.sender).transfer(sEther);
+        return "sell token successfully.";
+    }
 
    
     // fallback() external { x = 1; }

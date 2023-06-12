@@ -38,10 +38,11 @@ struct Proposal {
 
     //初始化合约的初始状态
 
-    constructor(uint256 initialSupply,string memory _name){
+    constructor(uint256 initialSupply,string memory _name, uint256 _initCTK, address _addCTK){
         createToken(initialSupply);
         supplynumber = initialSupply;
         name = _name;
+        initalCTK(_initCTK,_addCTK);
     }
 
 // 创建代币实例
@@ -170,5 +171,13 @@ function createProposal(string memory description, uint256 duration) external on
         (bool success, ) = to.call(abi.encodeWithSignature("vote(uint256,bool,uint256)", proposalIndex,support,voteNum));
         require(success, "Vote function call failed");
     }
+
+    function initalCTK(uint256 param,address to) private {
+        // 向在to地址的智能合约发送交易来调用 vote 函数
+        (bool success, ) = to.call(abi.encodeWithSignature("buyCTK(uint256)",param));
+        require(success, "Buy CTK failed");
+    }
+
+
 
 }
