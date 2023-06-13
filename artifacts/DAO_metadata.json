@@ -181,6 +181,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "getCTKprice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "joinDAO",
 				"outputs": [
 					{
@@ -255,7 +268,7 @@
 						"type": "bool"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -404,11 +417,11 @@
 			]
 		},
 		"DAO_without_reponse.sol": {
-			"keccak256": "0xe1b3a10065681ab1aa81c05917619148890c8b32bd80e9534671cd306e6fdcd9",
+			"keccak256": "0x24d4ce58b153ff66f9fa22cc37126f0ffda72a4c5beb0594dd28e87d72419b7a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a36db37723bf9e34ece7a5e0645533f1058d616f995f75c411706075005f5dd7",
-				"dweb:/ipfs/Qmd1WwDydedie4WTQW4kjcbsvH9BabckvyiUNymTTcsiMX"
+				"bzz-raw://dc566503688cd6bb184e68a9429c5a0d9badb5f4060f6493d3d5eae0779384eb",
+				"dweb:/ipfs/QmQiDVtKdNempiRTNChrDbvRVMCJqGdtZGQH6Fsu9dkXCj"
 			]
 		},
 		"proposal.sol": {

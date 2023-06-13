@@ -421,11 +421,11 @@
 			]
 		},
 		"CollateralToken.sol": {
-			"keccak256": "0xa29726a2a9ced26f6d662c354e45e63aaf2974b57dd7269177b733c82e8e6c9f",
+			"keccak256": "0x87d1af758af4d88df542cfd85301387e27f4f2e2b7f639124f7897767c9f07e7",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://be6159f7779a57e9c45dab874617f96aad647ee416e68cb72faf417a633e4510",
-				"dweb:/ipfs/QmYx3WyDQ7PnvC6YSXENcDeFcUzv8AB6t7S25zDfDFFep7"
+				"bzz-raw://380bfc186fa69b26da8a586fa2285387e1b351a4e4d0d73f33c78326bd1c2172",
+				"dweb:/ipfs/QmQ1kcQNaE9rwYHnG1tbspdyCssPhUZbV3x6h4PKufTndM"
 			]
 		}
 	},

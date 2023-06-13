@@ -26,4 +26,14 @@ contract CollateralToken is ERC20 {
             return "Buy token successfully.";
         }
     }
+
+    function transferFrom(
+        address from,
+        address to,
+        uint256 amount
+    ) public virtual override returns (bool) {
+        _transfer(from, to, amount);
+        return true;
+    }
+
 }

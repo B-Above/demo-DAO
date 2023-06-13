@@ -33,6 +33,7 @@ struct Proposal {
     uint private ctkNum;
     // address of CTK
     address private addCTK;
+    uint private priceOfCTK;
 
  // 限制只有成员可以调用的修饰符
     modifier onlyMember() {
@@ -49,6 +50,7 @@ struct Proposal {
         initalCTK(_initCTK,_addCTK);
         ctkNum = 100*_initCTK;
         addCTK = _addCTK;
+        priceOfCTK = 2;
     }
 
 // 创建代币实例
@@ -140,13 +142,21 @@ function createProposal(string memory description, uint256 duration) external on
 
 
 //查询提案的投票结果
-    function proposalResult(uint proID) public view
+    function proposalResult(uint proID) public 
             returns (uint support, uint againest, bool pass)
     {
         (support,againest,pass) = pros[proposals[proID].index].proposalResult();
+        if (pass)
+        {
+            priceOfCTK = 1;
+        }
     }
 
-
+    
+    function getCTKprice() public view returns (uint price)
+    {
+        return priceOfCTK;
+    }
 
 
 //调用者（成员）在指定提案中剩余的投票权重
@@ -189,7 +199,7 @@ function createProposal(string memory description, uint256 duration) external on
         require(members[msg.sender].exists, "You are no a member, please join DAO first");
         uint256 receivedEther = msg.value;
         // 计算应发送的代币数量
-        uint256 tokenAmount = 5*receivedEther;
+        uint256 tokenAmount = receivedEther/priceOfCTK;
         if (ctkNum < tokenAmount){
             // 代币不足，将以太币退回
             payable(msg.sender).transfer(receivedEther);
@@ -204,7 +214,7 @@ function createProposal(string memory description, uint256 duration) external on
 
     function sellCTK(uint256 num) external returns (string memory) {
         require(members[msg.sender].exists, "You are no a member, please join DAO first");
-        uint256 sEther = num/5;
+        uint256 sEther = num*priceOfCTK;
         // 计算应发送的代币数量
         (bool success, ) = addCTK.call(abi.encodeWithSignature("transferFrom(address,address,uint256)",msg.sender,address(this),num));
         require(success, "Buy CTK failed");
