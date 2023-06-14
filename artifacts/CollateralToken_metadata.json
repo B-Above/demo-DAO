@@ -269,6 +269,35 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "to",
 						"type": "address"
 					},
@@ -421,11 +450,11 @@
 			]
 		},
 		"CollateralToken.sol": {
-			"keccak256": "0x87d1af758af4d88df542cfd85301387e27f4f2e2b7f639124f7897767c9f07e7",
+			"keccak256": "0xcc00b42e70160eaddbc77520d0aaec3d7bd87ab04e68f127149842f35f4fcf4d",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://380bfc186fa69b26da8a586fa2285387e1b351a4e4d0d73f33c78326bd1c2172",
-				"dweb:/ipfs/QmQ1kcQNaE9rwYHnG1tbspdyCssPhUZbV3x6h4PKufTndM"
+				"bzz-raw://11c3e2adf51b668df3e9fe173afd9dff712787217aab2aff5d8f59badbb13a72",
+				"dweb:/ipfs/QmPpP1hLeFagX4oU7VcsnkxgyG6Y4AWMEyDkh6dL4txafK"
 			]
 		}
 	},

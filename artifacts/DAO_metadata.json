@@ -417,11 +417,11 @@
 			]
 		},
 		"DAO_without_reponse.sol": {
-			"keccak256": "0x24d4ce58b153ff66f9fa22cc37126f0ffda72a4c5beb0594dd28e87d72419b7a",
+			"keccak256": "0x15d14bb83b270f9ad938f75a31c88a8ecf94cc53352f0c093702a0606d75f834",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://dc566503688cd6bb184e68a9429c5a0d9badb5f4060f6493d3d5eae0779384eb",
-				"dweb:/ipfs/QmQiDVtKdNempiRTNChrDbvRVMCJqGdtZGQH6Fsu9dkXCj"
+				"bzz-raw://a8707acfebe1447ec740ecad7488ebd3086ebef05f3f874a9c717aae6bfc4642",
+				"dweb:/ipfs/QmYDYVAaWCLjpikjx2B1pFek1WuKabxqS2aSnNCYVizkLW"
 			]
 		},
 		"proposal.sol": {

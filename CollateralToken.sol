@@ -15,23 +15,23 @@ contract CollateralToken is ERC20 {
 
     function buyCTK(uint256 receivedEther) public returns (string memory){
         // 计算应发送的代币数量
-        uint256 tokenAmount = 100*receivedEther;
+        uint256 tokenAmount = receivedEther;
         uint256 tokenNum = balanceOf(creater);
         if (tokenNum < tokenAmount){
             // 代币不足
             return "Token not enough, ETH is back.";
         } else {
             // 发送代币给成员
-            transferFrom(creater,msg.sender,tokenAmount);
+            transFrom(creater,msg.sender,tokenAmount);
             return "Buy token successfully.";
         }
     }
 
-    function transferFrom(
+    function transFrom(
         address from,
         address to,
         uint256 amount
-    ) public virtual override returns (bool) {
+    ) public returns (bool) {
         _transfer(from, to, amount);
         return true;
     }

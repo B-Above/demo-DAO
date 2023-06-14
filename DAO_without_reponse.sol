@@ -206,7 +206,7 @@ function createProposal(string memory description, uint256 duration) external on
             return "Token not enough, ETH is back.";
         } else {
             // 发送CTK给成员
-            (bool success, ) = addCTK.call(abi.encodeWithSignature("transferFrom(address,address,uint256)",address(this),msg.sender,tokenAmount));
+            (bool success, ) = addCTK.call(abi.encodeWithSignature("transFrom(address,address,uint256)",address(this),msg.sender,tokenAmount));
             require(success, "Buy CTK failed");
             return "Buy token successfully.";
         }
@@ -216,7 +216,7 @@ function createProposal(string memory description, uint256 duration) external on
         require(members[msg.sender].exists, "You are no a member, please join DAO first");
         uint256 sEther = num*priceOfCTK;
         // 计算应发送的代币数量
-        (bool success, ) = addCTK.call(abi.encodeWithSignature("transferFrom(address,address,uint256)",msg.sender,address(this),num));
+        (bool success, ) = addCTK.call(abi.encodeWithSignature("transFrom(address,address,uint256)",msg.sender,address(this),num));
         require(success, "Buy CTK failed");
         payable(msg.sender).transfer(sEther);
         return "sell token successfully.";
