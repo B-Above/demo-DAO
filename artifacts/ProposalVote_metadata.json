@@ -6,13 +6,24 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_startTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_endTime",
+						"type": "uint256"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
 			{
 				"inputs": [],
-				"name": "proposalResult",
+				"name": "Proposalresult",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -41,7 +52,7 @@
 						"type": "address"
 					}
 				],
-				"name": "restVoteWeight",
+				"name": "RestVoteWeight",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -53,10 +64,43 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "endTime",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "endVoting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "startTime",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "voteNumber",
+						"name": "vote_number",
 						"type": "uint256"
 					},
 					{
@@ -66,7 +110,7 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "totalToken",
+						"name": "total_token",
 						"type": "uint256"
 					},
 					{
@@ -133,11 +177,11 @@
 	},
 	"sources": {
 		"proposal.sol": {
-			"keccak256": "0xd93d9f3cddcef11ea804ff63222f10b94f8df186b792a8723a73479c358cff2d",
+			"keccak256": "0xb686555fa1c38b1ec5e49333ef0107a7072da490c1ebe56735577e640b408137",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://643e05c3d08d6f2a425c0af41981595670ce35f6f5d9ec3d3d7a62ba5f2cccc8",
-				"dweb:/ipfs/QmX6o69QwgNZTr4NwgJWqLp1WfnrzE5qFks5KWKAmuZ9j3"
+				"bzz-raw://8dced776896d20fb8d5c330a124e3177c5f4c99dc1ab62257c6f197cf313059a",
+				"dweb:/ipfs/QmRx9ifizAFmPMw6BXyXdZbY2MLJKZ4TMxHav7rxzUGosu"
 			]
 		}
 	},

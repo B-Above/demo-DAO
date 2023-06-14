@@ -16,33 +16,10 @@
 						"internalType": "string",
 						"name": "_name",
 						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_initCTK",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "_addCTK",
-						"type": "address"
 					}
 				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
-			},
-			{
-				"inputs": [],
-				"name": "buyCTK",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "payable",
-				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -181,19 +158,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "getCTKprice",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "price",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "joinDAO",
 				"outputs": [
 					{
@@ -268,7 +232,7 @@
 						"type": "bool"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -314,25 +278,6 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "num",
-						"type": "uint256"
-					}
-				],
-				"name": "sellCTK",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
 						"name": "proposalIndex",
 						"type": "uint256"
 					},
@@ -370,7 +315,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"DAO_without_reponse.sol": "DAO"
+			"main_DAO.sol": "DAO"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -416,20 +361,20 @@
 				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
 			]
 		},
-		"DAO_without_reponse.sol": {
-			"keccak256": "0x15d14bb83b270f9ad938f75a31c88a8ecf94cc53352f0c093702a0606d75f834",
+		"main_DAO.sol": {
+			"keccak256": "0xa0d0175e22b3f27d6d16fc33ceda386dd21eba7f53c60d229bf4bd9378c163b3",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a8707acfebe1447ec740ecad7488ebd3086ebef05f3f874a9c717aae6bfc4642",
-				"dweb:/ipfs/QmYDYVAaWCLjpikjx2B1pFek1WuKabxqS2aSnNCYVizkLW"
+				"bzz-raw://7e1594478996fd3f11e64f91f0cb7d7127a3bbe54a18df7df0dcd71f78524224",
+				"dweb:/ipfs/QmQMqs1o2xhoBZNcaJuLg5xfofpPAfL5t8Z6ZpURFqwtWv"
 			]
 		},
 		"proposal.sol": {
-			"keccak256": "0x71e1fa6102f92bd7998c9da7055234b4178cc0bc6d5c147d7817b7bd7ca34c45",
+			"keccak256": "0xd73a7e9ad6288476841522580abf7f19890a26d8c06a6de5aa85a89b4ea33a0a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d1f761ae9dc85d2427792d70a15fa535cc33c3157baab6a17457ae9839fdecc3",
-				"dweb:/ipfs/QmPHoC2h6oQQF3BfKNX8XhSjHsZWkM3uuDKWJJy5AJHrAC"
+				"bzz-raw://45696f66df11fc8394ff9f2260a68ed9c332ea695373db53def5d65aa7842b86",
+				"dweb:/ipfs/QmZAvJ8xuZXtEGhAqEtvFwuZiaKHWazBeciY9D75D1PL5Z"
 			]
 		},
 		"token.sol": {
