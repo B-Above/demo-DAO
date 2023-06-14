@@ -6,9 +6,40 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_startTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_endTime",
+						"type": "uint256"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "endTime",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "endVoting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -53,10 +84,23 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "startTime",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "voteNumber",
+						"name": "vote_number",
 						"type": "uint256"
 					},
 					{
@@ -66,7 +110,7 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "totalToken",
+						"name": "total_token",
 						"type": "uint256"
 					},
 					{
@@ -133,11 +177,11 @@
 	},
 	"sources": {
 		"proposal.sol": {
-			"keccak256": "0x71e1fa6102f92bd7998c9da7055234b4178cc0bc6d5c147d7817b7bd7ca34c45",
+			"keccak256": "0xd73a7e9ad6288476841522580abf7f19890a26d8c06a6de5aa85a89b4ea33a0a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d1f761ae9dc85d2427792d70a15fa535cc33c3157baab6a17457ae9839fdecc3",
-				"dweb:/ipfs/QmPHoC2h6oQQF3BfKNX8XhSjHsZWkM3uuDKWJJy5AJHrAC"
+				"bzz-raw://45696f66df11fc8394ff9f2260a68ed9c332ea695373db53def5d65aa7842b86",
+				"dweb:/ipfs/QmZAvJ8xuZXtEGhAqEtvFwuZiaKHWazBeciY9D75D1PL5Z"
 			]
 		}
 	},

@@ -16,30 +16,51 @@ contract proposalVote{
 
     mapping(address => Voter) public voters;
     Voteprocess private pro;
+    uint256 public startTime;
+    uint256 public endTime;
 
-    constructor(){
-        pro = Voteprocess(false,0,0);
+    modifier onlyDuringVotingPeriod() {
+        require(block.timestamp >= startTime && block.timestamp <= endTime, "Voting is not currently allowed");
+        _;
     }
 
-    function vote(uint256 voteNumber, bool support, uint256 totalToken, address sender) public{
-        if (!voters[sender].exists){
-            voters[sender] = Voter(true, totalToken);
+    constructor(uint256 _startTime, uint256 _endTime){
+        pro = Voteprocess(false,0,0);
+        startTime = _startTime;
+        endTime = _endTime;
+    }
+
+//投票操作
+    function vote(uint256 vote_number, bool support, uint256 total_token, address sender) public onlyDuringVotingPeriod {
+               if (!voters[sender].exists){
+            voters[sender] = Voter(true, total_token);
         } 
-        require(voteNumber <= voters[sender].voteweight, "Your token is not enough");
+        require(!pro.finish, "Voting has already ended");
+        require(voters[sender].exists, "Only registered voters can vote");
+        require(vote_number <= voters[sender].voteweight, "Your token balance is not enough");
+
         //Proposal storage proposal = proposals[proposalIndex];
         //require(!proposal.voters[members[msg.sender]].exists,"You have already voted for this proposal");
         //require(proposal.creator != msg.sender, "The proposal creator cannot vote");
 
         if (support) {
-            pro.yesVotes += voteNumber;
-            voters[sender].voteweight -= voteNumber;
+            pro.yesVotes += vote_number;
+            voters[sender].voteweight -= vote_number;
         } else {
-            pro.noVotes += voteNumber;
-            voters[sender].voteweight -= voteNumber;
+            pro.noVotes += vote_number;
+            voters[sender].voteweight -= vote_number;
         }
         //proposal.voters.push(members[msg.sender]);
         //members[msg.sender].hasVoted = true;
     }
+
+    function endVoting() public {
+        require(!pro.finish, "Voting has already ended");
+        require(block.timestamp > endTime, "Voting period has not yet ended");
+
+        pro.finish = true;
+    }
+
 
     function proposalResult() public view
             returns (uint support, uint againest, bool pass)

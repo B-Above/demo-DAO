@@ -121,7 +121,7 @@ function createProposal(string memory description, uint256 duration) external on
             endTime: endTime
         })
     );
-    pros[id] = new proposalVote();
+    pros[id] = new proposalVote(startTime,endTime);
 }
 
     
